@@ -17,7 +17,7 @@ using namespace std;
 
 //fazendo a struct
 typedef struct operadores{
-    string operadores;
+    char operadores;
     float n1;
     float n2;
     float resultado;
@@ -63,7 +63,7 @@ int main(){
             cin >> oper[i].n2;
             oper[i].resultado = oper[i].n1 + oper[i].n2;
             cout << "A soma entre " << oper[i].n1 << "+" << oper[i].n2 << "=" << oper[i].resultado << endl;        
-            oper[i].operadores = " + ";
+            oper[i].operadores = '+';
 
             n1.push(oper[i].n1);
             n2.push(oper[i].n2);
@@ -88,7 +88,7 @@ int main(){
             cin >> oper[i].n2;
             oper[i].resultado = oper[i].n1 - oper[i].n2;
             cout << "A soma entre " << oper[i].n1 << "-" << oper[i].n2 << "=" << oper[i].resultado << endl;        
-            oper[i].operadores == "-";
+            oper[i].operadores = '-';
 
             n1.push(oper[i].n1);
             n2.push(oper[i].n2);
@@ -112,7 +112,7 @@ int main(){
             cin >> oper[i].n2;
             oper[i].resultado = oper[i].n1 * oper[i].n2;
             cout << "A soma entre " << oper[i].n1 << "*" << oper[i].n2 << "=" << oper[i].resultado << endl;        
-            oper[i].operadores == "*";
+            oper[i].operadores = '*';
 
             n1.push(oper[i].n1);
             n2.push(oper[i].n2);
@@ -138,7 +138,7 @@ int main(){
             }
             oper[i].resultado = oper[i].n1 / oper[i].n2;
             cout << "A soma entre " << oper[i].n1 << "/" << oper[i].n2 << "=" << oper[i].resultado << endl;        
-            oper[i].operadores == "/";
+            oper[i].operadores = '/';
 
             n1.push(oper[i].n1);
             n2.push(oper[i].n2);
@@ -149,14 +149,17 @@ int main(){
         }
         if(op == 5){
             // mostrando o historico de resultados
+            int j;
 
             system("cls");
-           while(!resultado.empty()){
-               cout << n1.front() << oper[i].operadores << n2.front() << " = " << resultado.front();
-               cout << endl;
-               n1.pop();
-               n2.pop();
-               resultado.pop();
+            for(j=0;j<=i;j++){
+                while(!resultado.empty()){
+                    cout << n1.front() << oper[j].operadores << n2.front() << " = " << resultado.front();
+                    cout << endl;
+                    n1.pop();
+                    n2.pop();
+                    resultado.pop();
+                }
            }
           system("pause");
         }
